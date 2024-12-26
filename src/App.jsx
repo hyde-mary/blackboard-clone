@@ -5,7 +5,7 @@ import Sidebar from "./components/sidebar";
 export default function App() {
   return (
     <>
-      <div className="flex min-h-screen">
+      <div className="flex min-h-screen bg-[#f8f8f8]">
         {/* sidebar */}
         <Sidebar />
 
