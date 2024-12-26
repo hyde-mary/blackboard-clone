@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import SidebarHeader from "./sidebar-header";
 import SidebarItem from "./sidebar-item";
 import {
@@ -9,13 +9,17 @@ import {
   LibraryBig,
   LogOut,
   Mail,
+  Menu,
   NotebookPen,
   SquarePen,
   UserRound,
   Users,
+  X,
 } from "lucide-react";
 
 const Sidebar = () => {
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
+
   const items = [
     { icon: Landmark, label: "Institution Page" },
     { icon: UserRound, label: "ANDREI BENCH MALLARI" },
@@ -31,21 +35,34 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="bg-[#262626] w-56 h-screen flex flex-col justify-between">
-      <SidebarHeader />
+    <>
+      <button
+        className="md:hidden fixed top-1 left-1 z-20 p-1 rounded bg-transparent"
+        onClick={() => setSidebarOpen(!isSidebarOpen)}
+      >
+        {isSidebarOpen ? <X /> : <Menu />}
+      </button>
 
-      {/* sidebar items */}
-      <ul className="flex-1 flex-col mt-4 mb-4 overflow-y-auto">
-        {items.map((item, index) => (
-          <SidebarItem key={index} Icon={item.icon} label={item.label} />
-        ))}
-      </ul>
-      <ul className="flex flex-col p-2">
-        <li className="ml-2 cursor-pointer">Privacy</li>
-        <li className="ml-2 cursor-pointer">Terms</li>
-        <li className="ml-2 cursor-pointer">Accessibility</li>
-      </ul>
-    </div>
+      <div
+        className={`bg-[#262626] w-56 h-screen flex flex-col justify-between fixed md:static z-10 transition-transform ${
+          isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+        } md:translate-x-0`}
+      >
+        <SidebarHeader />
+
+        <ul className="flex-1 flex-col mt-4 mb-4 overflow-y-auto">
+          {items.map((item, index) => (
+            <SidebarItem key={index} Icon={item.icon} label={item.label} />
+          ))}
+        </ul>
+
+        <ul className="flex flex-col p-2">
+          <li className="ml-2 cursor-pointer">Privacy</li>
+          <li className="ml-2 cursor-pointer">Terms</li>
+          <li className="ml-2 cursor-pointer">Accessibility</li>
+        </ul>
+      </div>
+    </>
   );
 };
 
