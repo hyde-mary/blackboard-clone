@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ToggleUtility from "./toggle-utility";
 import SearchUtility from "./search-utility.jsx";
 import DropdownUtility from "./dropdown-utility.jsx";
@@ -36,11 +36,19 @@ const MainUtilities = () => {
       </div>
 
       <div className="flex-1">
-        <DropdownUtility placeholder={"All Terms"} items={terms} />
+        <DropdownUtility
+          title={"Terms"}
+          placeholder={"All Terms"}
+          items={terms}
+        />
       </div>
 
       <div className="flex-1">
-        <DropdownUtility placeholder={"All Courses"} items={courses} />
+        <DropdownUtility
+          title={"Filters"}
+          placeholder={"All Courses"}
+          items={courses}
+        />
       </div>
 
       <div className="w-48 flex items-center justify-center">
