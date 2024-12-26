@@ -1,7 +1,19 @@
+import MainHeader from "./components/main-header";
+import MainFooter from "./components/main-header";
+import Sidebar from "./components/sidebar";
+
 export default function App() {
   return (
     <>
-      <h1 class="text-3xl font-bold underline">Hello world!</h1>
+      <div className="flex min-h-screen">
+        {/* sidebar */}
+        <Sidebar />
+
+        {/* main content */}
+        <main className="flex-1 bg-[#f8f8f8] min-h-screen">
+          <MainHeader />
+        </main>
+      </div>
     </>
   );
 }
