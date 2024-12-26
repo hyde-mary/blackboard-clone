@@ -10,27 +10,35 @@ const ToggleUtility = () => {
 
   return (
     <div className="flex">
-      <div
-        className={`flex items-center justify-center w-8 h-8 ${
-          activeToggle === "list"
-            ? "bg-[#262626] text-[#ffffff]"
-            : "bg-[#ffffff] text-[#262626]"
-        } cursor-pointer border rounded-sm`}
+      <button
+        className={`flex items-center justify-center w-10 h-10 cursor-pointer border rounded-sm ${
+          activeToggle === "list" ? "bg-[#ffc342]" : "bg-[#ffffff]"
+        } transition-colors duration-200 focus:outline-none`}
         onClick={() => handleToggle("list")}
+        aria-pressed={activeToggle === "list"}
+        aria-label="List View"
       >
-        <List className="w-4 h-4" />
-      </div>
+        <List
+          className={`w-5 h-5 ${
+            activeToggle === "list" ? "text-black" : "text-gray-600"
+          }`}
+        />
+      </button>
 
-      <div
-        className={`flex items-center justify-center w-8 h-8 ${
-          activeToggle === "grid"
-            ? "bg-[#262626] text-[#ffffff]"
-            : "bg-[#ffffff] text-[#262626]"
-        } cursor-pointer border rounded-sm`}
+      <button
+        className={`flex items-center justify-center w-10 h-10 cursor-pointer border rounded-sm ${
+          activeToggle === "grid" ? "bg-[#ffc342]" : "bg-[#ffffff]"
+        } transition-colors duration-200 focus:outline-none`}
         onClick={() => handleToggle("grid")}
+        aria-pressed={activeToggle === "grid"}
+        aria-label="Grid View"
       >
-        <Grid className="w-4 h-4" />
-      </div>
+        <Grid
+          className={`w-5 h-5 ${
+            activeToggle === "grid" ? "text-black" : "text-gray-600"
+          }`}
+        />
+      </button>
     </div>
   );
 };
