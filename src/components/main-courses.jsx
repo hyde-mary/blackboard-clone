@@ -2,8 +2,20 @@ import { Info, Star } from "lucide-react";
 import React from "react";
 
 const MainCourses = ({ terms }) => {
+  const images = [
+    "https://loremflickr.com/400/250?random=1",
+    "https://loremflickr.com/400/250?random=2",
+    "https://loremflickr.com/400/250?random=3",
+    "https://loremflickr.com/400/250?random=4",
+    "https://loremflickr.com/400/250?random=5",
+    "https://loremflickr.com/400/250?random=6",
+    "https://loremflickr.com/400/250?random=7",
+    "https://loremflickr.com/400/250?random=8",
+    "https://loremflickr.com/400/250?random=9",
+    "https://loremflickr.com/400/250?random=10",
+  ];
   return (
-    <div className="pl-8 pr-8 mt-10 h-screen">
+    <div className="pl-8 pr-8 mt-8">
       {terms.map((term) => (
         <div key={term.id}>
           <h1 className="text-lg text-[#262626] font-semibold">{term.id}</h1>
@@ -14,16 +26,19 @@ const MainCourses = ({ terms }) => {
                 className="group card bg-base-100 w-96 shadow-lg mt-5 rounded-none transform transition-transform hover:cursor-pointer hover:shadow-xl hover:-translate-y-1 duration-300"
               >
                 <figure>
-                  <img src="https://loremflickr.com/400/250" alt="Shoes" />
+                  <img
+                    src={images[Math.floor(Math.random() * images.length)]}
+                    alt="Banner"
+                  />
                 </figure>
                 <div className="card-body bg-[#ffffff] p-4">
                   <h2 className="text-md text-gray-600 font-medium">
                     {course.id}
                   </h2>
-                  <p className="text-lg text-[#262626] font-medium group-hover:underline">
+                  <p className="text-lg text-[#262626] max-h-[60px] font-medium group-hover:underline line-clamp-2">
                     {course.title}
                   </p>
-                  <p className="mt-5 text-gray-900">Open</p>
+                  <p className="text-gray-900">Open</p>
                   <div className="w-full border border-b-2" />
                   <div className="flex items-center justify-between pt-2 pb-2">
                     <div className="flex-1">

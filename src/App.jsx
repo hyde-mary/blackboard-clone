@@ -12,7 +12,7 @@ export default function App() {
         <Sidebar />
 
         {/* main content */}
-        <main className="flex-1 bg-[#f8f8f8] overflow-y-auto">
+        <main className="flex-1 bg-[#f8f8f8] overflow-y-auto mb-10">
           <MainHeader />
           <MainUtilities />
           <MainCourses terms={terms} />
