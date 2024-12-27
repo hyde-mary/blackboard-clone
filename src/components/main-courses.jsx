@@ -1,19 +1,12 @@
 import { Info, Star } from "lucide-react";
 import React from "react";
 
+const getRandomImage = () => {
+  const randomNum = Math.floor(Math.random() * 9) + 1;
+  return `./src/assets/banners/cat-${randomNum}.jpg`;
+};
+
 const MainCourses = ({ terms }) => {
-  const images = [
-    "https://loremflickr.com/400/250?random=1",
-    "https://loremflickr.com/400/250?random=2",
-    "https://loremflickr.com/400/250?random=3",
-    "https://loremflickr.com/400/250?random=4",
-    "https://loremflickr.com/400/250?random=5",
-    "https://loremflickr.com/400/250?random=6",
-    "https://loremflickr.com/400/250?random=7",
-    "https://loremflickr.com/400/250?random=8",
-    "https://loremflickr.com/400/250?random=9",
-    "https://loremflickr.com/400/250?random=10",
-  ];
   return (
     <div className="pl-8 pr-8 mt-8">
       {terms.map((term) => (
@@ -26,10 +19,7 @@ const MainCourses = ({ terms }) => {
                 className="group card bg-base-100 sm:w-60 md:w-72 lg:w-96 shadow-lg mt-5 rounded-none transform transition-transform hover:cursor-pointer hover:shadow-xl hover:-translate-y-1 duration-300"
               >
                 <figure>
-                  <img
-                    src={images[Math.floor(Math.random() * images.length)]}
-                    alt="Banner"
-                  />
+                  <img src={getRandomImage()} alt="Banner" />
                 </figure>
                 <div className="card-body bg-[#ffffff] p-4">
                   <h2 className="text-md text-gray-600 font-medium">
