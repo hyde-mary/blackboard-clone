@@ -26,7 +26,7 @@ const MainUtilities = () => {
   const pages = [{ label: "25" }, { label: "50" }, { label: "100" }];
 
   return (
-    <div className="flex items-center pl-8 w-full h-24 space-x-4 pr-8">
+    <div className="flex flex-wrap items-center pl-8 w-full space-y-4 md:space-y-0 h-auto space-x-4 pr-8 mt-8">
       <div className="flex-none">
         <ToggleUtility />
       </div>
