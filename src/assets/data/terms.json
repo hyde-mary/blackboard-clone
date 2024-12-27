@@ -1,0 +1,57 @@
+[
+    {
+        "id": "2T2425",
+        "courses": [
+            {
+                "id": "ITS105_BM3_2T2425",
+                "title": "Social and Professional Issues",
+                "professor": "Alberto Villaluz"
+            },
+            {
+                "id": "ITS164L_BM1_2T2425",
+                "title": "Advanced Computer Network 2",
+                "professor": "William Rey"
+            },
+            {
+                "id": "ITS120_BM1_2T2425",
+                "title": "Application Development and Emerging Technologies",
+                "professor": "Sally Zara"
+            },
+            {
+                "id": "ITS120L_BM1_2T2425",
+                "title": "Application Development and Emerging Technologies Laboratory",
+                "professor": "Leo Matthew Sarne"
+            },
+            {
+                "id": "CSS182-3_BM1_2T2425",
+                "title": "Data Science 3",
+                "professor": "John Paul Tomas"
+            },
+            {
+                "id": "MATH154-1_BM1_2T2425",
+                "title": "Quantitative Methods",
+                "professor": "Agnes Pinca"
+            },
+            {
+                "id": "RZL110_BM8_2T2425",
+                "title": "The Life and Works of Rizal",
+                "professor": "Neofidel Ignacio Ramirez"
+            },
+            {
+                "id": "CSS200-1_BM1_2T2425",
+                "title": "Thesis 1",
+                "professor": "William Torres"
+            },
+            {
+                "id": "ITS122_BM2_2T2425",
+                "title": "Web Systems and Technologies 2",
+                "professor": "John Emmanuel Dela Vega"
+            },
+            {
+                "id": "ITS122L_BM2_2T2425",
+                "title": "Web Systems and Technologies 2 Laboratory",
+                "professor": "John Emmanuel Dela Vega"
+            }
+        ]
+    }
+]
