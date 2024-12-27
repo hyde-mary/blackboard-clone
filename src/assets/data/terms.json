@@ -53,5 +53,55 @@
                 "professor": "John Emmanuel Dela Vega"
             }
         ]
+    },
+    {
+        "id": "1T2425",
+        "courses": [
+            {
+                "id": "ITS163L_BM1_1T2425",
+                "title": "Advanced Computer Network 1",
+                "professor": "Ken Robert San Juan"
+            },
+            {
+                "id": "CSS182-2_BM1_1T2425",
+                "title": "Data Science 2",
+                "professor": "John Paul Tomas"
+            },
+            {
+                "id": "ITS165_BM1_1T2425",
+                "title": "Information Assurance and Security 1",
+                "professor": "Eric Blancaflor"
+            },
+            {
+                "id": "CSS141_BM1_1T2425",
+                "title": "Numerical Methods",
+                "professor": "Ken Robert San Juan"
+            },
+            {
+                "id": "ITS150_BM1_1T2425",
+                "title": "Operating Systems",
+                "professor": "William Rey"
+            },
+            {
+                "id": "ITS150L_BM1_1T2425",
+                "title": "Operating Systems Laboratory",
+                "professor": "William Rey"
+            },
+            {
+                "id": "CSS125_BM1_1T2425",
+                "title": "Principles of Programming Languages",
+                "professor": "Elcid Serrano"
+            },
+            {
+                "id": "CSS125L_BM1_1T2425",
+                "title": "Principles of Programming Languages Laboratory",
+                "professor": "Elcid Serrano"
+            },
+            {
+                "id": "CSS109_BM1_1T2425",
+                "title": "Research Methods in Computer Science",
+                "professor": "John Paul Tomas"
+            }
+        ]
     }
 ]
