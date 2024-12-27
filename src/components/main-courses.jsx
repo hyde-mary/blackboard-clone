@@ -19,11 +19,11 @@ const MainCourses = ({ terms }) => {
       {terms.map((term) => (
         <div key={term.id}>
           <h1 className="text-lg text-[#262626] font-semibold">{term.id}</h1>
-          <div className="flex flex-wrap gap-12 overflow-x-auto pb-4">
+          <div className="flex flex-wrap sm:gap-2 md:gap-4 lg:gap-6 overflow-x-auto pb-4">
             {term.courses.map((course) => (
               <div
                 key={course.id}
-                className="group card bg-base-100 w-96 shadow-lg mt-5 rounded-none transform transition-transform hover:cursor-pointer hover:shadow-xl hover:-translate-y-1 duration-300"
+                className="group card bg-base-100 sm:w-60 md:w-72 lg:w-96 shadow-lg mt-5 rounded-none transform transition-transform hover:cursor-pointer hover:shadow-xl hover:-translate-y-1 duration-300"
               >
                 <figure>
                   <img
@@ -38,8 +38,9 @@ const MainCourses = ({ terms }) => {
                   <p className="text-lg text-[#262626] max-h-[60px] font-medium group-hover:underline line-clamp-2">
                     {course.title}
                   </p>
-                  <p className="text-gray-900">Open</p>
-                  <div className="w-full border border-b-2" />
+                  <div className="w-full border-b-2">
+                    <p className="text-gray-900 mb-2">Open</p>
+                  </div>
                   <div className="flex items-center justify-between pt-2 pb-2">
                     <div className="flex-1">
                       <p className="text-[#262626] text-md">
