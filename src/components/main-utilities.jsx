@@ -13,6 +13,8 @@ const MainUtilities = ({
   setSelectedCourseItem,
   selectedPageItem,
   setSelectedPageItem,
+  searchFilter,
+  setSearchFilter,
 }) => {
   return (
     <div className="flex flex-wrap items-center pl-8 w-full space-y-4 md:space-y-0 h-auto space-x-4 pr-8 mt-8">
@@ -21,7 +23,10 @@ const MainUtilities = ({
       </div>
 
       <div className="flex-1">
-        <SearchUtility />
+        <SearchUtility
+          searchFilter={searchFilter}
+          setSearchFilter={setSearchFilter}
+        />
       </div>
 
       <div className="flex-1">

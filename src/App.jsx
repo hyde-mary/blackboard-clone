@@ -22,6 +22,7 @@ export default function App() {
   const [selectedTermItem, setSelectedTermItem] = useState(termsItems[0].label);
   const [selectedCourseItem, setSelectedCourseItem] = useState("All Courses");
   const [selectedPageItem, setSelectedPageItem] = useState(pages[0].label);
+  const [searchFilter, setSearchFilter] = useState("");
 
   return (
     <>
@@ -42,11 +43,17 @@ export default function App() {
             setSelectedCourseItem={setSelectedCourseItem}
             selectedPageItem={selectedPageItem}
             setSelectedPageItem={setSelectedPageItem}
+            searchFilter={searchFilter}
+            setSearchFilter={setSearchFilter}
           />
           <MainCourses
             terms={terms}
             selectedTermFilter={selectedTermItem}
+            setSelectedTermFilter={setSelectedTermItem}
             selectedCourseFilter={selectedCourseItem}
+            setSelectedCourseFilter={setSelectedCourseItem}
+            searchFilter={searchFilter}
+            setSearchFilter={setSearchFilter}
           />
         </main>
       </div>
