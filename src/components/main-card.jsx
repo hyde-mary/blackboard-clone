@@ -20,7 +20,7 @@ const MainCard = ({ course, index }) => {
           {course.title}
         </p>
         <div className="w-full border-b-2">
-          <p className="text-gray-900 mb-2">Open</p>
+          <p className="text-gray-900 mb-2">{course.status}</p>
         </div>
         <div className="flex items-center justify-between pt-2 pb-2">
           <div className="flex-1">
