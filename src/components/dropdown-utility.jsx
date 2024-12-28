@@ -2,7 +2,13 @@ import React from "react";
 import DropdownUtilityItem from "./dropdown-utility-item";
 import { ChevronDown } from "lucide-react";
 
-const DropdownUtility = ({ title, placeholder, items }) => {
+const DropdownUtility = ({
+  title,
+  placeholder,
+  items,
+  selectedItem,
+  setSelectedItem,
+}) => {
   return (
     <div className="dropdown w-full bg-[#ffffff] relative">
       <div
@@ -18,7 +24,7 @@ const DropdownUtility = ({ title, placeholder, items }) => {
         role="button"
         className="p-2 border border-gray-400 text-[#262626] rounded-md cursor-pointer flex items-center justify-between"
       >
-        {placeholder}
+        {selectedItem || placeholder}
         <ChevronDown className="w-4 h-4 text-gray-600 ml-2" />
       </div>
       <ul
@@ -29,7 +35,8 @@ const DropdownUtility = ({ title, placeholder, items }) => {
           <DropdownUtilityItem
             key={index}
             label={item.label}
-            isActive={index === 0}
+            isActive={selectedItem === item.label}
+            onClick={() => setSelectedItem(item.label)}
           />
         ))}
       </ul>
