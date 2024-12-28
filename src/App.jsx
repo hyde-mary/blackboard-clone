@@ -43,7 +43,11 @@ export default function App() {
             selectedPageItem={selectedPageItem}
             setSelectedPageItem={setSelectedPageItem}
           />
-          <MainCourses terms={terms} selectedTermFilter={selectedTermItem} />
+          <MainCourses
+            terms={terms}
+            selectedTermFilter={selectedTermItem}
+            selectedCourseFilter={selectedCourseItem}
+          />
         </main>
       </div>
     </>

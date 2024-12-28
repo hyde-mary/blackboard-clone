@@ -1,11 +1,31 @@
 /* eslint-disable react/prop-types */
 import MainCard from "./main-card";
 
-const MainCourses = ({ terms, selectedTermFilter }) => {
+const MainCourses = ({ terms, selectedTermFilter, selectedCourseFilter }) => {
+  const filterCourses = (terms) => {
+    switch (selectedCourseFilter) {
+      case "Courses I am taking":
+        return terms.filter((term) => term.id === "2T2425");
+      case "Open courses":
+        return terms
+          .map((term) => ({
+            ...term,
+            courses: term.courses.filter(
+              (courses) => courses.status === "Open"
+            ),
+          }))
+          .filter((term) => term.courses.length > 0);
+      case "Completed courses":
+        return terms.filter((term) => term.id !== "2T2425");
+      default:
+        return terms;
+    }
+  };
+
   const filteredTerms =
     selectedTermFilter === "All Terms" || !selectedTermFilter
-      ? terms
-      : terms.filter((term) => term.id === selectedTermFilter);
+      ? filterCourses(terms)
+      : filterCourses(terms.filter((term) => term.id === selectedTermFilter));
 
   const totalCourses = filteredTerms.reduce(
     (total, term) => total + term.courses.length,
