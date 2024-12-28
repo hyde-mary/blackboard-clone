@@ -2,21 +2,13 @@ import React, { useState } from "react";
 import ToggleUtility from "./toggle-utility";
 import SearchUtility from "./search-utility.jsx";
 import DropdownUtility from "./dropdown-utility.jsx";
+import terms from "../assets/data/terms.json";
 
 const MainUtilities = () => {
-  const terms = [
-    { label: "All Terms" },
-    { label: "2T2425" },
-    { label: "1T2425" },
-    { label: "4Q2324" },
-    { label: "3Q2324" },
-    { label: "2Q2324" },
-    { label: "1Q2324" },
-    { label: "4Q2223" },
-    { label: "3Q2223" },
-    { label: "2Q2223" },
-    { label: "1Q2223" },
-  ];
+  const termsItems = terms.map((term) => ({
+    label: term.id,
+  }));
+
   const courses = [
     { label: "All Courses" },
     { label: "Courses I am taking" },
@@ -39,7 +31,7 @@ const MainUtilities = () => {
         <DropdownUtility
           title={"Terms"}
           placeholder={"All Terms"}
-          items={terms}
+          items={termsItems}
         />
       </div>
 
