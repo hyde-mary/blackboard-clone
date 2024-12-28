@@ -1,18 +1,11 @@
 /* eslint-disable react/prop-types */
 import { Info, Lock, Star } from "lucide-react";
 
-const MainCard = ({ course, index }) => {
-  const getImageNumber = (index) => {
-    return (index % 9) + 1;
-  };
-
+const MainCard = ({ course, imageNumber }) => {
   return (
     <div className="group card bg-base-100 sm:w-60 md:w-72 lg:w-96 shadow-lg mt-5 rounded-none transform transition-transform hover:cursor-pointer hover:shadow-xl hover:-translate-y-1 duration-300">
       <figure className="relative">
-        <img
-          src={`./src/assets/banners/cat-${getImageNumber(index)}.jpg`}
-          alt="Banner"
-        />
+        <img src={`./src/assets/banners/cat-${imageNumber}.jpg`} alt="Banner" />
         {course.status === "Locked" && (
           <div className="absolute inset-0 bg-[#262626] bg-opacity-70 flex flex-col items-center justify-center">
             <Lock className="w-20 h-20 text-[#ffffff]" />

@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import MainCard from "./main-card";
+import { useRef } from "react";
 
 const MainCourses = ({ terms, selectedTermFilter, selectedCourseFilter }) => {
   const filterCourses = (terms) => {
@@ -32,6 +33,14 @@ const MainCourses = ({ terms, selectedTermFilter, selectedCourseFilter }) => {
     0
   );
 
+  const imageCounter = useRef(1);
+
+  const getNextImageNumber = () => {
+    const current = imageCounter.current;
+    imageCounter.current = current === 9 ? 1 : current + 1;
+    return current;
+  };
+
   return (
     <div className="pl-8 pr-8">
       <p className="pt-2">{totalCourses} results</p>
@@ -40,7 +49,11 @@ const MainCourses = ({ terms, selectedTermFilter, selectedCourseFilter }) => {
           <h1 className="text-lg text-[#262626] font-semibold">{term.id}</h1>
           <div className="flex flex-wrap sm:gap-2 md:gap-4 lg:gap-6 overflow-x-auto pb-4">
             {term.courses.map((course, index) => (
-              <MainCard course={course} index={index} key={course.id} />
+              <MainCard
+                course={course}
+                key={index}
+                imageNumber={getNextImageNumber()}
+              />
             ))}
           </div>
         </div>
