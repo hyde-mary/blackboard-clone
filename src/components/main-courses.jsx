@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { XCircle } from "lucide-react";
 import MainCard from "./main-card";
 
 const MainCourses = ({
@@ -6,6 +7,9 @@ const MainCourses = ({
   selectedTermFilter,
   selectedCourseFilter,
   searchFilter,
+  setSelectedTermFilter,
+  setSelectedCourseFilter,
+  setSearchFilter,
 }) => {
   const filterCourses = (terms) => {
     switch (selectedCourseFilter) {
@@ -58,7 +62,36 @@ const MainCourses = ({
 
   return (
     <div className="pl-8 pr-8">
-      <p className="pt-2">{totalCourses} results</p>
+      <div className="flex flex-wrap gap-2 pt-4 items-center">
+        <p>{totalCourses} results</p>
+        {searchFilter && (
+          <div className="flex items-center ml-2 bg-[#262626] text-[#f8f8f8] p-1 pl-3 pr-3 rounded-2xl">
+            {searchFilter}
+            <XCircle
+              className="ml-2 w-4 h-4 hover:cursor-pointer"
+              onClick={() => setSearchFilter("")}
+            />
+          </div>
+        )}
+        {selectedTermFilter !== "All Terms" && (
+          <div className="flex items-center ml-2 bg-[#262626] text-[#f8f8f8] p-1 pl-3 pr-3 rounded-2xl">
+            {selectedTermFilter}
+            <XCircle
+              className="ml-2 w-4 h-4 hover:cursor-pointer"
+              onClick={() => setSelectedTermFilter("All Terms")}
+            />
+          </div>
+        )}
+        {selectedCourseFilter !== "All Courses" && (
+          <div className="flex items-center ml-2 bg-[#262626] text-[#f8f8f8] p-1 pl-3 pr-3 rounded-2xl">
+            {selectedCourseFilter}
+            <XCircle
+              className="ml-2 w-4 h-4 hover:cursor-pointer"
+              onClick={() => setSelectedCourseFilter("All Courses")}
+            />
+          </div>
+        )}
+      </div>
       {finalFilteredTerms.map((term) => (
         <div key={term.id} className="mt-4">
           <h1 className="text-lg text-[#262626] font-semibold">{term.id}</h1>

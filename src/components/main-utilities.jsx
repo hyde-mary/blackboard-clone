@@ -13,6 +13,7 @@ const MainUtilities = ({
   setSelectedCourseItem,
   selectedPageItem,
   setSelectedPageItem,
+  searchFilter,
   setSearchFilter,
 }) => {
   return (
@@ -22,7 +23,10 @@ const MainUtilities = ({
       </div>
 
       <div className="flex-1">
-        <SearchUtility setSearchFilter={setSearchFilter} />
+        <SearchUtility
+          searchFilter={searchFilter}
+          setSearchFilter={setSearchFilter}
+        />
       </div>
 
       <div className="flex-1">

@@ -24,7 +24,6 @@ export default function App() {
   const [selectedPageItem, setSelectedPageItem] = useState(pages[0].label);
   const [searchFilter, setSearchFilter] = useState("");
 
-  console.log(searchFilter);
   return (
     <>
       <div className="flex h-screen bg-[#f8f8f8]">
@@ -44,13 +43,17 @@ export default function App() {
             setSelectedCourseItem={setSelectedCourseItem}
             selectedPageItem={selectedPageItem}
             setSelectedPageItem={setSelectedPageItem}
+            searchFilter={searchFilter}
             setSearchFilter={setSearchFilter}
           />
           <MainCourses
             terms={terms}
             selectedTermFilter={selectedTermItem}
+            setSelectedTermFilter={setSelectedTermItem}
             selectedCourseFilter={selectedCourseItem}
+            setSelectedCourseFilter={setSelectedCourseItem}
             searchFilter={searchFilter}
+            setSearchFilter={setSearchFilter}
           />
         </main>
       </div>
