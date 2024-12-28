@@ -1,5 +1,5 @@
+/* eslint-disable react/prop-types */
 import { Info, Star } from "lucide-react";
-import React from "react";
 
 const getRandomImage = () => {
   const randomNum = Math.floor(Math.random() * 9) + 1;

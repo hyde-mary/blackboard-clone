@@ -1,27 +1,19 @@
-import React, { useState } from "react";
+/* eslint-disable react/prop-types */
 import ToggleUtility from "./toggle-utility";
 import SearchUtility from "./search-utility.jsx";
 import DropdownUtility from "./dropdown-utility.jsx";
-import terms from "../assets/data/terms.json";
 
-const MainUtilities = () => {
-  const termsItems = [
-    { label: "All Terms" },
-    ...terms.map((term) => ({ label: term.id })),
-  ];
-
-  const courses = [
-    { label: "All Courses" },
-    { label: "Courses I am taking" },
-    { label: "Open courses" },
-    { label: "Completed courses" },
-  ];
-  const pages = [{ label: "25" }, { label: "50" }, { label: "100" }];
-
-  const [selectedTermItem, setSelectedTermItem] = useState(termsItems[0].label);
-  const [selectedCourseItem, setSelectedCourseItem] = useState("All Courses");
-  const [selectedPageItem, setSelectedPageItem] = useState(pages[0].label);
-
+const MainUtilities = ({
+  termsItems,
+  courses,
+  pages,
+  selectedTermItem,
+  setSelectedTermItem,
+  selectedCourseItem,
+  setSelectedCourseItem,
+  selectedPageItem,
+  setSelectedPageItem,
+}) => {
   return (
     <div className="flex flex-wrap items-center pl-8 w-full space-y-4 md:space-y-0 h-auto space-x-4 pr-8 mt-8">
       <div className="flex-none">

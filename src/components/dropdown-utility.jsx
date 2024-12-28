@@ -1,4 +1,4 @@
-import React from "react";
+/* eslint-disable react/prop-types */
 import DropdownUtilityItem from "./dropdown-utility-item";
 import { ChevronDown } from "lucide-react";
 
