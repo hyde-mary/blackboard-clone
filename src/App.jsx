@@ -22,7 +22,9 @@ export default function App() {
   const [selectedTermItem, setSelectedTermItem] = useState(termsItems[0].label);
   const [selectedCourseItem, setSelectedCourseItem] = useState("All Courses");
   const [selectedPageItem, setSelectedPageItem] = useState(pages[0].label);
+  const [searchFilter, setSearchFilter] = useState("");
 
+  console.log(searchFilter);
   return (
     <>
       <div className="flex h-screen bg-[#f8f8f8]">
@@ -42,11 +44,13 @@ export default function App() {
             setSelectedCourseItem={setSelectedCourseItem}
             selectedPageItem={selectedPageItem}
             setSelectedPageItem={setSelectedPageItem}
+            setSearchFilter={setSearchFilter}
           />
           <MainCourses
             terms={terms}
             selectedTermFilter={selectedTermItem}
             selectedCourseFilter={selectedCourseItem}
+            searchFilter={searchFilter}
           />
         </main>
       </div>

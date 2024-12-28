@@ -1,8 +1,12 @@
 /* eslint-disable react/prop-types */
 import MainCard from "./main-card";
-import { useRef } from "react";
 
-const MainCourses = ({ terms, selectedTermFilter, selectedCourseFilter }) => {
+const MainCourses = ({
+  terms,
+  selectedTermFilter,
+  selectedCourseFilter,
+  searchFilter,
+}) => {
   const filterCourses = (terms) => {
     switch (selectedCourseFilter) {
       case "Courses I am taking":
@@ -23,37 +27,44 @@ const MainCourses = ({ terms, selectedTermFilter, selectedCourseFilter }) => {
     }
   };
 
+  const applySearchFilter = (terms) => {
+    if (!searchFilter || searchFilter.trim() === "") {
+      return terms;
+    }
+
+    const lowerCasedFilter = searchFilter.toLowerCase();
+
+    return terms
+      .map((term) => ({
+        ...term,
+        courses: term.courses.filter((course) =>
+          course.title.toLowerCase().includes(lowerCasedFilter)
+        ),
+      }))
+      .filter((term) => term.courses.length > 0);
+  };
+
   const filteredTerms =
     selectedTermFilter === "All Terms" || !selectedTermFilter
       ? filterCourses(terms)
       : filterCourses(terms.filter((term) => term.id === selectedTermFilter));
 
-  const totalCourses = filteredTerms.reduce(
+  const finalFilteredTerms = applySearchFilter(filteredTerms);
+
+  const totalCourses = finalFilteredTerms.reduce(
     (total, term) => total + term.courses.length,
     0
   );
 
-  const imageCounter = useRef(1);
-
-  const getNextImageNumber = () => {
-    const current = imageCounter.current;
-    imageCounter.current = current === 9 ? 1 : current + 1;
-    return current;
-  };
-
   return (
     <div className="pl-8 pr-8">
       <p className="pt-2">{totalCourses} results</p>
-      {filteredTerms.map((term) => (
+      {finalFilteredTerms.map((term) => (
         <div key={term.id} className="mt-4">
           <h1 className="text-lg text-[#262626] font-semibold">{term.id}</h1>
           <div className="flex flex-wrap sm:gap-2 md:gap-4 lg:gap-6 overflow-x-auto pb-4">
             {term.courses.map((course, index) => (
-              <MainCard
-                course={course}
-                key={index}
-                imageNumber={getNextImageNumber()}
-              />
+              <MainCard course={course} key={index} />
             ))}
           </div>
         </div>
