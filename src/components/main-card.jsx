@@ -23,7 +23,15 @@ const MainCard = ({ course }) => {
         </div>
         <div className="flex items-center justify-between pt-2 pb-2">
           <div className="flex-1">
-            <p className="text-[#262626] text-md">{course.professor}</p>
+            <p
+              className={`text-md ${
+                course.professor === "Multiple Instructors"
+                  ? "text-blue-500 underline"
+                  : "text-[#262626]"
+              }`}
+            >
+              {course.professor}
+            </p>
           </div>
           <div className="flex space-x-2 text-gray-500">
             <Info className="w-5 h-5" />
