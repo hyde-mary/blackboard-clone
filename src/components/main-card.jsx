@@ -3,8 +3,8 @@ import { Info, Lock, Star } from "lucide-react";
 
 const MainCard = ({ course }) => {
   return (
-    <div className="group card bg-base-100 sm:w-60 md:w-72 lg:w-96 shadow-lg mt-5 rounded-none transform transition-transform hover:cursor-pointer hover:shadow-xl hover:-translate-y-1 duration-300">
-      <figure className="relative sm:w-60 md:w-72 lg:w-96 h-[200px] max-h-[200px] overflow-hidden">
+    <div className="group card bg-base-100 w-full xs:w-52 sm:w-60 md:w-72 lg:w-96 shadow-lg mt-5 rounded-none transform transition-transform hover:cursor-pointer hover:shadow-xl hover:-translate-y-1 duration-300">
+      <figure className="relative w-full h-[200px] max-h-[200px] overflow-hidden">
         <img
           src={course.image}
           alt="Banner"
