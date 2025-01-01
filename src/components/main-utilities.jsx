@@ -52,7 +52,7 @@ const MainUtilities = ({
       <div className="w-48 flex items-center justify-center">
         <div className="mr-2">
           <DropdownUtility
-            placeholder={"25"}
+            placeholder={"100"}
             items={pages}
             selectedItem={selectedPageItem}
             setSelectedItem={setSelectedPageItem}

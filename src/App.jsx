@@ -21,7 +21,7 @@ export default function App() {
 
   const [selectedTermItem, setSelectedTermItem] = useState(termsItems[0].label);
   const [selectedCourseItem, setSelectedCourseItem] = useState("All Courses");
-  const [selectedPageItem, setSelectedPageItem] = useState(pages[0].label);
+  const [selectedPageItem, setSelectedPageItem] = useState(pages[2].label);
   const [searchFilter, setSearchFilter] = useState("");
 
   return (
