@@ -57,9 +57,9 @@ const Sidebar = () => {
         </ul>
 
         <ul className="flex flex-col p-2">
-          <li className="ml-2 cursor-pointer">Privacy</li>
-          <li className="ml-2 cursor-pointer">Terms</li>
-          <li className="ml-2 cursor-pointer">Accessibility</li>
+          <li className="ml-2 cursor-pointer hover:underline">Privacy</li>
+          <li className="ml-2 cursor-pointer hover:underline">Terms</li>
+          <li className="ml-2 cursor-pointer hover:underline">Accessibility</li>
         </ul>
       </div>
     </>

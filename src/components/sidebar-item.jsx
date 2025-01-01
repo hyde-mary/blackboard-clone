@@ -5,7 +5,7 @@ const SidebarItem = ({ Icon, label }) => {
     if (label === "Courses") {
       return "text-slate-950 bg-[#ffc342]";
     } else {
-      return "text-[#f8f8f8] hover:bg-[#1f1f1f] hover:text-[#f8f8f8] hover:cursor-pointer";
+      return "text-[#f8f8f8] hover:bg-[#1f1f1f] hover:text-[#f8f8f8] hover:cursor-pointer hover:underline";
     }
   };
 

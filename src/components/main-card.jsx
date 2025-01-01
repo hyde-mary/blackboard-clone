@@ -3,7 +3,7 @@ import { Info, Lock, Star } from "lucide-react";
 
 const MainCard = ({ course }) => {
   return (
-    <div className="group card bg-base-100 w-full xs:w-52 sm:w-60 md:w-72 lg:w-96 shadow-lg mt-5 rounded-none transform transition-transform hover:cursor-pointer hover:shadow-xl hover:-translate-y-1 duration-300">
+    <div className="group card bg-base-100 w-full xs:w-52 sm:w-60 md:w-72 lg:w-96 shadow-lg mt-5 rounded-none transform transition-transform hover:cursor-pointer hover:shadow-xl hover:-translate-y-1 duration-300 relative z-0">
       <figure className="relative w-full h-[200px] max-h-[200px] overflow-hidden">
         <img
           src={course.image}
@@ -25,7 +25,7 @@ const MainCard = ({ course }) => {
         <div className="w-full border-b-2">
           <p className="text-gray-900 mb-2">{course.status}</p>
         </div>
-        <div className="flex items-center justify-between pt-2 pb-2">
+        <div className="flex items-center justify-between pt-2 pb-2 relative">
           <div className="flex-1">
             <p
               className={`text-md ${
@@ -38,8 +38,8 @@ const MainCard = ({ course }) => {
             </p>
           </div>
           <div className="flex space-x-2 text-gray-500">
-            <Info className="w-5 h-5" />
-            <Star className="w-5 h-5" />
+            <Info className="w-5 h-5 hover:text-gray-700" />
+            <Star className="w-5 h-5 hover:text-gray-700" />
           </div>
         </div>
       </div>
