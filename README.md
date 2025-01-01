@@ -54,4 +54,4 @@ npm install
 npm run dev
 ```
 
-5. Open your browser and navigate to `http://localhost:3000`
+5. Open your browser and navigate to `http://localhost:5173`
